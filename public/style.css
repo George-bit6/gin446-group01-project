@@ -4,13 +4,13 @@
 
 * { box-sizing: border-box; }
 
-html { background: #eef1fb; }
+html { background: #dcc899; }
 
 body {
   margin: 0;
   padding: 24px 16px;
   font-family: Arial, Helvetica, sans-serif;
-  background: #eef1fb;
+  background: #B1ADA1;
   color: #1b1e3f;
   min-height: 100vh;
 }
@@ -19,7 +19,7 @@ body {
   max-width: 720px;
   margin: 0 auto;
   padding: 28px 32px;
-  background: #ffffff;
+  background: #F4F3EE;
   border-radius: 14px;
   box-shadow: 0 6px 24px rgba(27, 30, 63, 0.12);
 }
@@ -59,7 +59,7 @@ h1 { margin: 6px 0 4px; font-size: 28px; }
   padding: 12px;
   border: none;
   border-radius: 10px;
-  background: #4451c8;
+  background: #C15F3C;
   color: #ffffff;
   font-size: 16px;
   font-weight: bold;
