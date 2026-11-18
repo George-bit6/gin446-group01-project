@@ -26,15 +26,6 @@ const confirmBtn = document.getElementById("confirm-btn");
 form.addEventListener("submit", function(event) {
   event.preventDefault();
 
-  const skillInputs = form.querySelectorAll('input[name="skills"]');
-  const hasSkill = form.querySelector('input[name="skills"]:checked');
-  skillInputs[0].setCustomValidity(hasSkill ? "" : "Select at least one area of experience.");
-
-  const software = form.elements.software;
-  software.setCustomValidity(
-    software.selectedOptions.length > 0 ? "" : "Select at least one software option."
-  );
-
   if (!form.checkValidity()) {
     form.reportValidity();
     return;
@@ -95,9 +86,11 @@ function collectData() {
         return option.value;
       });
       value = selected.join(", ");
-    } else if (field.type === "radio") {
+    } else if (name === "graduation") {
       const checkedRadio = form.querySelector('input[name="' + name + '"]:checked');
       value = checkedRadio ? checkedRadio.value : "";
+    } else if (name === "consent") {
+      value = field.checked ? "Yes" : "No";
     } else if (field.type === "checkbox") {
       value = field.checked ? field.value : "";
     } else {
@@ -116,7 +109,7 @@ function collectData() {
    Clear the list first. Then hide the form and open the panel (classList). */
 
 function showReview(rows) {
-  list.innerHTML = "";
+  list.textContent = "";
 
   rows.forEach(function(row) {
     const dt = document.createElement("dt");
